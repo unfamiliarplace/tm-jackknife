@@ -1,0 +1,17 @@
+/* LOGO FONT */
+
+@font-face {
+  font-family: 'medgthl';
+  src: url('medgthl.eot') format('embedded-opentype');
+  src: url('medgthl.svg') format('svg');
+  src: url('medgthl.woff');
+  src: url('medgthl.otf');
+}
+
+@font-face {
+  font-family: 'medgthlb';
+  src: url('medgthlb.eot') format('embedded-opentype');
+  src: url('medgthlb.svg') format('svg');
+  src: url('medgthlb.woff');
+  src: url('medgthlb.otf');
+}
