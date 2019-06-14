@@ -1,0 +1,130 @@
+================================================================================
+CHANGES MADE DIRECTLY TO NEWSPAPER THEME FILES
+==============================================
+
+Last updated:       2018-02-04
+Last documented:    2018-02-04
+Newspaper version:  8.6
+
+================================================================================
+NOTES
+=====
+
+Changes to theme files are to be avoided because they are short-lived.
+But not everything can be overridden in a child theme or with the API,
+so it’s sometimes necessary to delve in. We only use it to fix bugs
+in the hopes the theme authors will fix it in future releases.
+
+================================================================================
+CHANGE 1    style.css misplacement of logo
+================================================================================
+
+This isn’t really a change to the theme files, but it is a workaround that
+should be deleted if the theme files are updated.
+
+Newspaper/style.css includes some logo styling to this effect:
+
+    @media (max-width: 767px) {
+      .td-header-style-10 #td-header-menu {
+        display: block;
+      }
+    }
+
+    @media (min-width: 767px) {
+      td-header-style-10 .td-affix .td-main-menu-logo {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+As you can see, a typo has led to one pixel being wrongly targeted.
+This has been addressed by this style patch in the Theme Panel’s custom CSS:
+
+    @media (min-width: 767px) and (max-width: 768px) {
+      .td-header-style-10 .td-affix .td-main-menu-logo {
+        position: initial;
+        left: 0;
+      }
+    }
+
+================================================================================
+CHANGE 2    Cron schedules bug
+================================================================================
+
+Documented: http://forum.tagdiv.com/topic/found-cron-bug-in-newspaper-8-1
+
+Newspaper adds a few cron schedules, as many plugins and themes do.
+This is done via a filter on the 'cron_schedules' hook.
+
+The callback to this filter takes one argument, the existing schedules.
+
+In Newspaper/includes/wp_booster/td_js.php the callback looks like this:
+
+    function _schedule_modify_add_three_days() {
+        $schedules['three_days'] = array(
+            'interval' => 259200, // 3 days in seconds
+            'display' => 'three_days'
+        );
+        return $schedules;
+    }
+
+As you can see, it's missing the $schedules parameter. As a result, it clears
+all other custom schedules from all plugins.
+
+Solution: add $schedules as a parameter to the function.
+
+================================================================================
+CHANGE 3    More Articles module display
+================================================================================
+
+Newspaper has a feature called the More Articles Box that displays on the right
+side of a post when you scroll down far enough. You can customize this in the
+Theme Panel to set which module is used to display the posts in this box.
+
+The tagDiv API that lets you register custom modules includes an argument for
+whether you want your custom module to be among the options for More Articles.
+
+However, even if you select it, your module will not be displayed, but Module 1.
+
+In Newspaper/includes/wp_booster/td_more_article_box.php we find this code:
+
+    switch($td_display_module) {
+        //module 2
+        case 2:
+            $td_mod = new td_module_2($each_post);
+            echo $td_mod->render();
+            break;
+
+        //module 3
+        case 3:
+            $td_mod = new td_module_3($each_post);
+            echo $td_mod->render();
+            break;
+
+        // etc.
+
+Clearly it is impossible for a custom module to actually render because it is
+not one of the finite, enumerated cases.
+
+Solution: Add our custom module numbers (31, 32, 33) to the cases:
+
+    // MJK: module 31
+    case 31:
+        $td_mod = new td_module_31($each_post);
+        echo $td_mod->render();
+        break;
+
+    // MJK: module 32
+    case 32:
+        $td_mod = new td_module_32($each_post);
+        echo $td_mod->render();
+        break;
+
+    // MJK: module 33
+    case 33:
+        $td_mod = new td_module_33($each_post);
+        echo $td_mod->render();
+        break;
+
+Ideally they would abandon the switch, set a variable to the module class
+(rather than an int for its ID suffix), and dynamically instantiate that.

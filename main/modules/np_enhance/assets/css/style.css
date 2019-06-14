@@ -1,0 +1,601 @@
+/* Above the fold: repeated from theme panel custom CSS */
+.td-header-gradient:before {
+    background: none !important;
+}
+
+.td-header-main-menu {
+    border-top: 1px solid #ccc !important;
+    border-bottom: 1px solid #777 !important;
+    padding-bottom: 5px !important;
+}
+
+.td-main-page-wrap {
+    padding-top: 0 !important;
+}
+
+.td-weather-header {
+    display: none !important;
+}
+
+
+.td-weather-top-widget {
+    margin-right: 8px !important;
+}
+
+.td-header-top-menu-full {
+    border-bottom: none !important;
+}
+
+.td-header-top-menu {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Homepage modules */
+
+/* Spacing for homepage blocks */
+
+.td_module_42 {
+    padding-bottom: 1px  !important;
+    border-bottom: 1px dashed #333 !important;
+}
+
+.td_module_42:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0; !important;
+}
+
+
+
+@media (max-width: 767px) {
+    .td_module_42 .td-module-meta-info
+    {
+        margin-bottom: 10px !important;
+    }
+}
+
+/* In Newspaper 8.1 it's display: none between these two sizes. Do not want */
+@media (min-width: 768px) and (max-width: 1018px) {
+    .td_module_42 .td-post-author-name {
+        display: initial !important;
+    }
+}
+
+/* Mobile spacing adjustments */
+
+@media (max-width: 767px) {
+    .td_module_41 {
+        padding-bottom: 15px !important;
+        margin-bottom: 12px !important;
+        border-bottom: 1px dashed #222 !important;
+    }
+
+}
+
+
+/* CSS sprites for credit icons */
+
+.mne-icon-author {
+  background: url(../images/cred/cred_sprite.png) 0 0;
+}
+
+.mne-icon-author-white {
+  background: url(../images/cred/cred_sprite.png) -13px 0;
+}
+
+.mne-icon-date {
+  background: url(../images/cred/cred_sprite.png) -26px 0;
+}
+
+.mne-icon-date-white {
+  background: url(../images/cred/cred_sprite.png) -39px 0;
+}
+
+.mne-icon-photo {
+  background: url(../images/cred/cred_sprite.png) -52px 0;
+}
+
+.mne-icon-photo-white {
+  background: url(../images/cred/cred_sprite.png) -65px 0;
+}
+
+.mne-icon-video {
+  background: url(../images/cred/cred_sprite.png) -78px 0;
+}
+
+.mne-icon-video-white {
+  background: url(../images/cred/cred_sprite.png) -91px 0;
+}
+
+/* LOGO FONT */
+
+.med-logo-text {
+  font-family: 'medgthl', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.med-tagline-text {
+  font-family: 'medgthlb', sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #222;
+}
+
+/* BASIC SPACING */
+
+  .td-header-style-10 .td-logo-wrap-full {
+    min-height: 0 !important;
+    line-height: 0 !important;
+  }
+  
+ /* MORE BASICS 2017-07-01 */
+ 
+ .med-logo {
+  width: 600px;
+  margin: auto;
+}
+
+.med-logo .subtitle {
+    text-align: left;
+}
+.td-header-menu-wrap-full {
+  margin-top: 5px !important;
+}
+
+.td-logo-wrap-full a {
+  line-height: 50px !important;
+}
+
+.med-logo tr td {  
+  border: none;
+}
+
+/* BASIC LOGO SIZING */
+
+.med-logo .subtitle {
+  line-height: 15px;
+}
+
+.med-logo .title .med-logo-text {
+  margin-top: -3px;
+}
+
+.med-logo .subtitle .med-tagline-text {
+  font-size: 13px;
+}
+
+/* LOGO CHANGES BY SIZE */
+
+@media(min-width: 1019px) {
+
+  .med-logo .title {
+    width: 65%;
+  }
+    
+  .med-logo {    
+    margin-top: 20px;
+  }
+  
+  .med-logo-text {
+    font-size: 54px;
+  }
+
+  .med-tagline-text {
+    font-size: 16px;
+  }
+  
+  .td-logo-wrap-full {
+    margin-bottom: 15px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1018px) {
+    
+  .med-logo {    
+    margin-top: 10px;
+  }
+
+  .med-logo .title {
+    width: 57%;
+  }
+
+  .med-logo .title .med-logo-text {
+    font-size: 44px;
+  }
+
+  .med-tagline-text {
+    font-size: 11.5px;
+  }
+
+  .td-logo-wrap-full {
+    margin-bottom: 5px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .td-logo-wrap-full {
+    display: none !important;
+  }
+}
+
+/* SEARCH */
+
+/* In newspaper 7.8 search appears to be invisible */
+
+.header-search-wrap .td-drop-down-search {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#td-top-search {
+  margin-top: 0 !important;
+}
+
+.med-hide-on-mobile #td-top-search {
+  top: -20px !important;
+}
+
+/* Mobile version */
+
+.med-hide-on-desktop .td-drop-down-search, .med-hide-on-desktop .td-drop-down-search:after {
+    display: none !important;
+}
+
+.med-hide-on-desktop .td-drop-down-search.td-drop-down-search-open {
+    display: initial !important;
+}
+
+.med-hide-on-desktop .td-drop-down-search {
+    top: 54px;
+}
+
+/* This part since Newspaper 6 */
+
+.med_nav_search .td-drop-down-search {
+  display: block !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  height: 36px !important;
+  top: 6px !important;
+}
+
+.med_nav_search #td-header-search {
+  background-color: transparent;
+}
+
+
+.med_nav_search .header-search-wrap .td-search-form {
+  margin-top: 0 !important;
+  }
+
+.med_nav_search input {
+  text-transform: uppercase !important;
+  font-family: 'Open Sans', Calibri, Trebuchet, sans-serif !important;
+  font-size: 15px !important;
+}
+
+#td-header-search {
+  /* border-right: 1px solid #e1e1e1 !important; */
+  border: none !important;
+  padding-right: 34px !important;
+}
+
+/* Search icon */
+#searchsubmit {
+    position: absolute;
+    top: -7px;
+    right: -15px;
+}
+
+/* Search button should be in the normal place on the search results page */
+.search-page-search-wrap #searchsubmit {
+    top: initial;
+    right: 0;
+}
+
+/* Header menu transition changed in NP 7.8 */
+
+.header-search-wrap .td-drop-down-search::before {
+    display: none !important;
+}
+
+.header-search-wrap .td-drop-down-search::after {
+    height: 3px;
+    content: '';
+    position: absolute;
+    top: 35px !important;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+   -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transition: width 0.2s ease;
+    -o-transition: width 0.2s ease;
+    transition: width 0.2s ease;
+}
+
+.header-search-wrap .td-drop-down-search::after {
+    background-color: transparent !important;
+    width: 0 !important;
+}
+
+
+.header-search-wrap .td-drop-down-search:hover::after,
+.header-search-wrap .td-drop-down-search:focus::after,
+.header-search-wrap .td-drop-down-search:active::after{
+    background-color: #11416f !important;
+    width: 100% !important;
+}
+
+
+/* Search form customization */
+
+.med_nav_search .td-search-form {
+  margin: 0 !important;
+}
+
+.med_nav_search button {
+  border: 0 !important;
+  background: none !important;
+}
+
+/* Widths on different sizes of screen */
+
+/* Large version*/
+@media (min-width: 1200px) {
+ .med_nav_search .td-drop-down-search, #td-header-search {
+    width: 165px !important;
+  }
+}
+
+/* Medium version */
+@media (min-width: 1019px) and (max-width:1199px) {
+ .med_nav_search .td-drop-down-search, #td-header-search {
+     width: 160px !important;
+  }
+}
+
+/* Small version */
+@media (min-width: 768px) and (max-width: 1018px) {
+  .med_nav_search .td-drop-down-search, #td-header-search {
+    width: 100px !important;
+  }
+}
+
+/* Tiny version needs a border */
+@media (max-width: 767px) {
+  #td-header-search {
+    border: 1px solid #ccc !important;
+  }
+  
+  
+  
+  .td-search-wrap-mob {
+  padding-top: 0 !important;
+}
+}
+
+/* Get the dropdown sorted out */
+
+.med-nav-search-results .td-module-thumb {
+  display: none !important;
+}
+
+.med-nav-search-results .item-details {
+  margin-left: 12px !important;
+}
+
+/*
+.med-nav-search-results .header-search-wrap .td-aj-search-results {
+  background-color: #efefef;
+}
+*/
+
+.med-nav-search-results .result-msg {
+  background-color: #fdfdfd!important;
+}
+
+/* Without this the category a:after covers the whole box; could also set that to display:none */
+
+.td_module_mx2 .td-module-meta-info {
+  position: relative;
+}
+
+/* allows us to have different versions of search */
+
+@media (min-width: 768px) {
+  .med-hide-on-desktop {
+    display: none !important;
+  }
+
+  .med-hide-on-mobile {
+    display: initial !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .med-hide-on-desktop {
+    display: initial !important;
+  }
+
+  .med-hide-on-mobile {
+    display: none !important;
+  }
+}
+
+
+/* category header: ones with no subcats should have the same spacing */
+
+.td-category-header .td-page-title.cat-no-subcats {
+  margin-bottom: 35px;
+}
+
+/* White meta info */
+
+.td-post-date.td-post-date-white, .td-author-name.td-author-name-white,
+.td-post-date.td-post-date-white a {
+  color: #FFF !important;
+}
+
+/* Margins for meta info */
+.mne-icon {
+  margin-right: 3px;
+}
+
+.td-post-author-name, .td-post-date {
+  margin-right: 4px !important;
+}
+
+.mjk-npe-vi, .mjk-npe-vi-white {
+  margin-left: 4px;
+}
+
+/* More text stuff */
+
+.mjk-npe-vi a:hover, .mjk-npe-vi-white a:hover {
+  text-decoration: underline !important;
+}
+
+a.mjk-npe-date {
+    color: #222;
+}
+
+a.mjk-npe-date:hover, .td_block_wrap a.mjk-npe-date:hover {
+    text-decoration: underline !important;
+}
+
+a.mjk-npe-date.mjk-npe-date-white {
+    color: white;
+}
+
+
+.mjk-npe-vi-white a {
+  color: white;
+}
+
+.td_block_wrap .mjk-npe-vi a:hover, .td_block_wrap .mjk-npe-vi-white a:hover {
+  text-decoration: underline !important;
+}
+
+.td-post-author-name a {
+  font-weight: bold;
+}
+
+/* Featured image caption */
+
+.mjk-npe-feat-caption {
+  margin-top: 10px;
+  margin-bottom: 0;
+  clear: both;
+}
+
+.mjk-npe-feat-caption {
+  font-style: italic;
+  font-weight: normal !important;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) and (max-width: 1017px) {
+  .mjk-npe-feat-caption {
+    margin-top: 0 !important;
+    }
+  }
+  
+/* User role style */
+
+.mjk-npe-roles {
+   font-size: 12px;
+}
+
+.mjk-npe-role-highlight {
+  font-weight: bold;
+}
+
+.mjk-npe-roles a {
+    color: #555;
+}
+
+.mjk-npe-roles a:hover {
+    text-decoration: underline;
+}
+
+/* Modules used in blocks need spacers when no subtitle or excerpt exists */
+.mjk-no-sub-spacer {
+    margin-bottom: 20px;
+}
+
+/* I added td-post-category to get the hover effect on big slide, but it also uppercases, so we have to undo */
+
+.td-module-meta-info .td-post-author-name a, .td-module-meta-info .td-post-date {
+    text-transform: capitalize !important;
+}
+
+/* Who knows where these went. Have to be reinstated */
+
+.category h1.td-page-title {
+    color: #11416f;
+}
+
+.category .td-category a {
+    background-color: #11416f;
+}
+
+.category-news h1.td-page-title {
+    color: #11416f;
+}
+
+.category-news .td-category a {
+    background-color: #11416f;
+}
+
+.category-opinion h1.td-page-title {
+    color: #51bfc1;
+}
+
+.category-opinion .td-category a {
+    background-color: #51bfc1;
+}
+
+.category-arts h1.td-page-title {
+    color: #ce1f32;
+}
+
+.category-arts .td-category a {
+    background-color: #ce1f32;
+}
+
+.category-features h1.td-page-title {
+    color: #e5b927;
+}
+
+.category-features .td-category a {
+    background-color: #e5b927;
+}
+
+.category-sports h1.td-page-title {
+    color: #189647;
+}
+
+.category-sports .td-category a {
+    background-color: #189647;
+}
+
+
+
+/* These are things also present in the theme panel but are above-the-fold */
+
+/* Category page needs better sidebar */
+.category .td-main-sidebar {
+    padding-top: 0 !important;
+}
+
+/* Search box font */
+.td-search-query, .td-widget-search-input {
+    text-transform: uppercase;
+}
+
+.td-widget-search-input {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
